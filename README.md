@@ -10,6 +10,7 @@
         y_axis_name: The lable of y,string
         legend: The label of each line,a list
         marker
+        style
 
     FigureManger:
     @attr:
@@ -18,12 +19,9 @@
         figure
         axes
     @method:
-    plot_line:
-        iterate each row of x,y, and each element of the legend and marker
-    
-    scatter:
-        plot in scatter mode.
-
+        plot
+        save: Save a figure object
+        load: class method, reload the figure object
         
 
 ```python
