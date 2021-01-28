@@ -48,4 +48,3 @@ fig2.plot() # reproduce the figure
 
 ```
 
-aaa
