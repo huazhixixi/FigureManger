@@ -69,3 +69,8 @@ class FigureManger:
     def save(self, name):
         import joblib
         joblib.dump(dict(data=self.data, layout=self.layout), name)
+
+    def update_layout(self,layout):
+        for key in layout:
+            if hasattr(self.layout,key):
+                setattr(self.layout,key,layout[key])
