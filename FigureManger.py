@@ -21,11 +21,13 @@ class Layout:
 
 class FigureManger:
 
-    def __init__(self, data: DataSetting, layout: Layout):
+    def __init__(self, data: DataSetting, layout: Layout,keyword):
         self.data = data
         self.layout = layout
         self.figure = None
         self.axes = None
+        self.keyword = keyword
+
 
     def plot(self):
         x = self.data.x
@@ -64,11 +66,12 @@ class FigureManger:
         import joblib
         data = joblib.load(name)['data']
         layout = joblib.load(name)['layout']
-        return cls(data, layout)
+        keyword = joblib.load(name)['keyword']
+        return cls(data, layout,keyword)
 
     def save(self, name):
         import joblib
-        joblib.dump(dict(data=self.data, layout=self.layout), name)
+        joblib.dump(dict(data=self.data, layout=self.layout,keyword = self.keyword), name)
 
     def update_layout(self,layout):
         for key in layout:
