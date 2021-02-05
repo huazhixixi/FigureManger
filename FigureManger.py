@@ -40,6 +40,7 @@ class FigureManger:
             fig, axes = plt.subplots()
             for x_row, y_row in zip(x, y):
                 if self.layout.markers:
+                    assert len(self.layout.markers) == x.shape[0]
                     try:
                         axes.plot(x_row, y_row, label=self.layout.legend[cnt], marker=self.layout.markers[cnt])
                     except IndexError:
