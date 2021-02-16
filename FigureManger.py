@@ -42,7 +42,7 @@ class FigureManger:
                 if self.layout.markers:
                     assert len(self.layout.markers) == x.shape[0]
                     try:
-                        axes.plot(x_row, y_row, label=self.layout.legend[cnt], marker=self.layout.markers[cnt])
+                        axes.plot(x_row, y_row, label=self.layout.legend[cnt], marker=self.layout.markers[cnt],markersize=2)
                     except IndexError:
                         axes.plot(x_row, y_row, marker=self.layout.markers[cnt])
                 else:
